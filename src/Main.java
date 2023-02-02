@@ -11,7 +11,7 @@ public class Main {
 
         String text = sc.nextLine();
 
-        if (text.equals("1")){
+        if (text.equals("1")) {
             System.out.print("Enter the Initial Investment: ");
             double initialInvestment = sc.nextDouble();
 
@@ -27,7 +27,7 @@ public class Main {
                     lengthOfTimeInMonth);
         }
 
-        if (text.equals("2")){
+        if (text.equals("2")) {
 
             System.out.print("Enter the Initial Investment: ");
             double initialInvestment1 = sc.nextDouble();
@@ -41,11 +41,15 @@ public class Main {
             System.out.print("Enter the Length Of Time In Month: ");
             double lengthOfTimeInMonth1 = sc.nextDouble();
 
+            System.out.println("Enter the Number Of Calculation Periods: ");
+            double numberOfCalculationPeriods1 = sc.nextDouble();
+
             System.out.print("Result: ");
             CompoundInterestCalculator(initialInvestment1,
                     estimatedInterestRate1,
                     lengthOfTimeInMonth1,
-                    monthlyContribution1);
+                    monthlyContribution1,
+                    numberOfCalculationPeriods1);
         }
 
     }
@@ -62,10 +66,14 @@ public class Main {
     static void CompoundInterestCalculator(double initialInvestment1,
                                            double estimatedInterestRate1,
                                            double monthlyContribution1,
-                                           double lengthOfTimeInMonth1){
+                                           double lengthOfTimeInMonth1,
+                                           double numberOfCalculationPeriods) {
         estimatedInterestRate1 /= 100.0;
         lengthOfTimeInMonth1 /= 12.0;
-        double amountReceived = initialInvestment1 * (1.0 + estimatedInterestRate1 * lengthOfTimeInMonth1);
+        numberOfCalculationPeriods /= lengthOfTimeInMonth1;
+
+
+        double amountReceived = initialInvestment1 * (1.0 + estimatedInterestRate1);
         System.out.println(amountReceived);
 
 
