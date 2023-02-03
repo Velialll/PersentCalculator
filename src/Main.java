@@ -32,23 +32,23 @@ public class Main {
             System.out.print("Enter the Initial Investment: ");
             double initialInvestment1 = sc.nextDouble();
 
-            System.out.print("Enter the Estimated InterestRate: ");
+            System.out.print("Enter the Estimated Interest Rate: ");
             double estimatedInterestRate1 = sc.nextDouble();
 
-            System.out.print("Enter the Monthly Contribution:");
-            double monthlyContribution1 = sc.nextDouble();
+            //System.out.print("Enter the Monthly Contribution:");
+            //double monthlyContribution1 = sc.nextDouble();
 
             System.out.print("Enter the Length Of Time In Month: ");
             double lengthOfTimeInMonth1 = sc.nextDouble();
 
-            System.out.println("Enter the Number Of Calculation Periods: ");
+            System.out.print("Enter the Number Of Calculation Periods: ");
             double numberOfCalculationPeriods1 = sc.nextDouble();
 
             System.out.print("Result: ");
             CompoundInterestCalculator(initialInvestment1,
                     estimatedInterestRate1,
                     lengthOfTimeInMonth1,
-                    monthlyContribution1,
+                   // monthlyContribution1,
                     numberOfCalculationPeriods1);
         }
 
@@ -65,15 +65,14 @@ public class Main {
 
     static void CompoundInterestCalculator(double initialInvestment1,
                                            double estimatedInterestRate1,
-                                           double monthlyContribution1,
+                                           //double monthlyContribution1,
                                            double lengthOfTimeInMonth1,
                                            double numberOfCalculationPeriods) {
-        estimatedInterestRate1 /= 100.0;
-        lengthOfTimeInMonth1 /= 12.0;
-        numberOfCalculationPeriods /= lengthOfTimeInMonth1;
-
-
-        double amountReceived = initialInvestment1 * (1.0 + estimatedInterestRate1);
+        estimatedInterestRate1 = estimatedInterestRate1 / 100.0;
+        //lengthOfTimeInMonth1 = lengthOfTimeInMonth1 / 12.0;
+        double operation = (1.0 + estimatedInterestRate1);
+        double operation2 = Math.pow(operation, numberOfCalculationPeriods * lengthOfTimeInMonth1);
+        double amountReceived = initialInvestment1 * operation2;
         System.out.println(amountReceived);
 
 
