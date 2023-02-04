@@ -65,7 +65,7 @@ public class Main {
 
     static void CompoundInterestCalculator(double initialInvestment1,
                                            double estimatedInterestRate1,
-                                           //double monthlyContribution1,
+                                         //double monthlyContribution1,
                                            double lengthOfTimeInMonth1,
                                            double numberOfCalculationPeriods) {
         estimatedInterestRate1 = estimatedInterestRate1 / 100.0;
