@@ -27,7 +27,7 @@ public class Main {
                     lengthOfTimeInMonth);
         }
 
-        if (text.equals("2")) {
+        /*if (text.equals("2")) {
 
             System.out.print("Enter the Initial Investment: ");
             double initialInvestment1 = sc.nextDouble();
@@ -45,13 +45,7 @@ public class Main {
             double numberOfCalculationPeriods1 = sc.nextDouble();
 
             System.out.print("Result: ");
-            CompoundInterestCalculator(initialInvestment1,
-                    estimatedInterestRate1,
-                    lengthOfTimeInMonth1,
-                   // monthlyContribution1,
-                    numberOfCalculationPeriods1);
-        }
-
+        }*/
     }
 
     static void SimplePercentCalculator(double initialInvestment,
@@ -63,18 +57,26 @@ public class Main {
         System.out.println(amountReceived);
     }
 
-    static void CompoundInterestCalculator(double initialInvestment1,
-                                           double estimatedInterestRate1,
-                                         //double monthlyContribution1,
-                                           double lengthOfTimeInMonth1,
-                                           double numberOfCalculationPeriods) {
-        estimatedInterestRate1 = estimatedInterestRate1 / 100.0;
-        //lengthOfTimeInMonth1 = lengthOfTimeInMonth1 / 12.0;
-        double operation = (1.0 + estimatedInterestRate1);
-        double operation2 = Math.pow(operation, numberOfCalculationPeriods * lengthOfTimeInMonth1);
-        double amountReceived = initialInvestment1 * operation2;
-        System.out.println(amountReceived);
+    static void CompoundPercentDailyCapitalization(double money,
+                                                   double percent,
+                                                   int days){
 
+        double result =money * Math.pow(1 + ((percent / 100) / 365 ), days);
+        System.out.println("Compound percent Daily Capitalization = " + result);
+    }
+    static void CompoundPercentMonthlyCapitalization(double money,
+                                                     double percent,
+                                                     int numberOfOperation){
 
+        double result = money  * Math.pow(1 + ((percent / 100) / 12), numberOfOperation);
+        System.out.println("Compound percent Monthly Capitalization = " + result);
+    }
+
+    static void CompoundPercentQuarterlyCapitalization(double money,
+                                                       double percent,
+                                                       int quarterly){
+
+        double result = money  * Math.pow(1 + ((percent / 100) / 4), quarterly);
+        System.out.println("Compound percent Quarterly Capitalization = " + result);
     }
 }
